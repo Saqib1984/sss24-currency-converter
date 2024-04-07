@@ -38,8 +38,8 @@ while (condition) {
     let currency_to = currency[user_answer.to];
     let amount = user_answer.amount;
     let base_amount = amount / currency_from;
-    let converted_amount = Math.round(base_amount * currency_to);
-    console.log(chalk.magenta.bold(`Your Converted Amount From ${user_answer.from} To ${user_answer.to} Is ${converted_amount}.${user_answer.to}`));
+    let converted_amount = base_amount * currency_to;
+    console.log(chalk.magenta.bold(`Your Converted Amount From ${user_answer.from} To ${user_answer.to} Is ${converted_amount.toFixed(2)}.${user_answer.to}`));
     console.log(chalk.blue.bold("\t THANKS YOU FOR USING SSS MONEY EXCHANGE\t"));
     let user_answer2 = await inquirer.prompt({
         name: "exit",
